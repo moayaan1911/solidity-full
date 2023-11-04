@@ -16,3 +16,6 @@
 [submodule "08. Foundry ERC20/lib/openzeppelin-contracts"]
 	path = 08. Foundry ERC20/lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "08. Foundry Lottery Raffle/lib/forge-std"]
+	path = 08. Foundry Lottery Raffle/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
