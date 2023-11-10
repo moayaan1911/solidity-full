@@ -1,7 +1,4 @@
 <!-- @format -->
-
-Here is an outline for Chapter 1 - Blockchain Basics Part 4:
-
 ## Chapter 1 - Blockchain Basics, Part 4
 
 ### Hash

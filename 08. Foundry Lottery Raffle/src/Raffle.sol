@@ -1,9 +1,3 @@
-Certainly! Below is a Markdown representation of the "Smart Contract: Raffle" with an in-depth explanation of the various sections, variables, constructor, errors, and functions within the Solidity contract provided.
-
-### Smart Contract: Raffle
-
-The contract `Raffle` is designed to conduct a simple raffle using the Solidity programming language and integrates the Chainlink VRF (Verifiable Random Function) for the generation of random numbers. This smart contract manages the raffle process, entry fees, random selection of winners, and upkeep processes.
-```solidity
 // SPDX-License-Identifier:MIT
 pragma solidity ^0.8.18;
 
@@ -11,7 +5,7 @@ pragma solidity ^0.8.18;
  * @title Raffle Contract
  * @author moayaan.eth
  * @notice A Simple raffle contract
- * @dev Implementing Chainlink VRF2
+ * @dev Implementing Chainlink VRF2 and automation
  */
 
 import {VRFCoordinatorV2Interface} from "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";
@@ -126,49 +120,21 @@ contract Raffle is VRFConsumerBaseV2 {
         return (upkeepNeeded, "0x0");
     }
 
-    function getEntraceFee() public view returns (uint256) {
+    function getEntraceFee() external view returns (uint256) {
         return i_entranceFees;
     }
+
+    function getRaffleState() external view returns (RaffleState) {
+        return raffleState;
+    }
+
+    function totalPlayers() external view returns (uint256) {
+        return players.length;
+    }
+
+    function getParticularPlayer(
+        uint256 _index
+    ) external view returns (address) {
+        return players[_index];
+    }
 }
-```
-
-#### Variables
-
-- `CONFIRMATIONS`: A constant variable holding the number of confirmations required for the random number generation.
-- `RANDOM_WORDS`: A constant variable specifying the number of random words expected from the Chainlink VRF.
-- `i_entranceFees`: An immutable variable storing the entrance fee required for participation in the raffle.
-- `i_interval`: An immutable variable defining the interval time for raffle upkeep.
-- `lastTimeStamp`: A variable storing the timestamp of the last raffle event.
-- `i_coordinatorAddress`: An immutable variable holding the address of the Chainlink VRF Coordinator.
-- `i_keyHash`: An immutable variable containing the key hash used for randomness.
-- `i_subscriptionID`: An immutable variable storing the subscription ID for VRF.
-- `players`: An array of payable addresses containing the participants of the raffle.
-- `i_callbackGasLimit`: An immutable variable storing the gas limit for the callback function.
-- `recentWinner`: An address variable holding the most recent winner of the raffle.
-- `raffleState`: An enum variable representing the state of the raffle, whether it is open for entries or in the process of winner calculation.
-
-#### Constructor
-
-The `constructor` initializes the `Raffle` contract. It accepts parameters such as entrance fees, time intervals, VRF Coordinator address, key hash, subscription ID, and callback gas limit. It sets initial values and configures the Chainlink VRF for random number generation.
-
-#### Errors
-
-The contract defines custom errors to handle specific conditions:
-- `RAFFLE__Not_Enough_ETH_Sent`: Raised when an insufficient amount of ether is sent for raffle participation.
-- `RAFFLE__Transaction_Failed`: Indicates a failure in the transaction process.
-- `RAFFLE__Raffle_Not_Open`: Raised when an attempt is made to enter the raffle when it's not open for participation.
-- `RAFFLE__Upkeep_is_False`: Indicates a failure in the upkeep process, triggered by insufficient balance, players, or time elapsed.
-
-#### Functions
-
-1. `enterRaffle()`: Allows participants to enter the raffle by sending the required entrance fees. It checks if the raffle is open and reverts if not, adding the sender's address to the list of participants.
-
-2. `performUpkeep()`: Checks for upkeep conditions and triggers the request for random words from Chainlink VRF when conditions are met.
-
-3. `fulfillRandomWords()`: Internally handles the process of selecting a winner based on the received random words and disburses the reward.
-
-4. `checkUpkeep()`: Checks if the contract requires upkeep based on specific conditions, such as time passed, available balance, active participants, and open raffle state.
-
-5. `getEntranceFee()`: Returns the entrance fee set for the raffle.
-
-This contract effectively manages the raffle process, ensuring fairness and transparency through the integration of the Chainlink VRF for random number generation.

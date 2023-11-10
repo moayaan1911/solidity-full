@@ -1,7 +1,4 @@
 <!-- @format -->
-
-Here is the complete Markdown guide for Chapter 1 - Blockchain Basics:
-
 ## Chapter 1 - Blockchain Basics
 
 ### What is Blockchain

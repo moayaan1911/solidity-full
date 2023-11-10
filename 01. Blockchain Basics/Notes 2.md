@@ -1,7 +1,4 @@
 <!-- @format -->
-
-Here is the completed Chapter 1 - Blockchain Basics Part 2 guide:
-
 ## Chapter 1 - Blockchain Basics, Part 2
 
 ### Oracle Networks

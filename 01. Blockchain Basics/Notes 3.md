@@ -1,7 +1,5 @@
 <!-- @format -->
 
-Here is an outline for Chapter 1 - Blockchain Basics Part 3:
-
 ## Chapter 1 - Blockchain Basics, Part 3
 
 ### Consensus Mechanisms
