@@ -25,3 +25,9 @@
 [submodule "08. Foundry Lottery Raffle/lib/chainlink"]
 	path = 08. Foundry Lottery Raffle/lib/chainlink
 	url = https://github.com/smartcontractkit/chainlink
+[submodule "09. Foundry ERC20/lib/forge-std"]
+	path = 09. Foundry ERC20/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "09. Foundry ERC20/lib/openzeppelin-contracts"]
+	path = 09. Foundry ERC20/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
