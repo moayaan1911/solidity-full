@@ -31,12 +31,12 @@
 [submodule "09. Foundry ERC20/lib/openzeppelin-contracts"]
 	path = 09. Foundry ERC20/lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
-[submodule "10. Foundry NFTs/lib/forge-std"]
-	path = 10. Foundry NFTs/lib/forge-std
+[submodule "10.FoundryNFTs/lib/forge-std"]
+	path = 10.FoundryNFTs/lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
-[submodule "10. Foundry NFTs/lib/openzeppelin-contracts"]
-	path = 10. Foundry NFTs/lib/openzeppelin-contracts
+[submodule "10.FoundryNFTs/lib/openzeppelin-contracts"]
+	path = 10.FoundryNFTs/lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
-[submodule "10. Foundry NFTs/lib/foundry-devops"]
-	path = 10. Foundry NFTs/lib/foundry-devops
+[submodule "10.FoundryNFTs/lib/foundry-devops"]
+	path = 10.FoundryNFTs/lib/foundry-devops
 	url = https://github.com/Cyfrin/foundry-devops
