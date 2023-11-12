@@ -1,5 +1,5 @@
 ﻿# solidity-full
-Patrick Collins Foundry Course CORE CHAPTERS
+This repo consists CORE CONCEPTS from the Patrick Collins Foundry course and covers building smart contracts and dApps using the Foundry development framework. It starts with blockchain basics and moves on to several hands-on projects like a crowdfunding dApp, NFT contract, ERC20 token, and upgradable contracts. 
 
 ## Course Modules
 
